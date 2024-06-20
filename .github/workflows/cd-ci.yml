@@ -16,6 +16,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'
       - name: Build Project
         run: mvn clean install -DskipTests
       - name: Deploy to EB
@@ -25,6 +27,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: 'Springboot-deploy-aws'
           environment_name: 'springboot-deploy-aws-env'
-          version_label: ${{ github.sha }}
+          version_label: 1
           region: ap-northeast-3
-          deployment_package: springboot-deploy-aws.jar
+          deployment_package: deploy.zip
