@@ -27,4 +27,4 @@ jobs:
           environment_name: 'springboot-deploy-aws-env'
           version_label: ${{ github.sha }}
           region: ap-northeast-3
-          deployment_package: target/springboot-deploy-aws.jar
+          deployment_package: springboot-deploy-aws.jar
