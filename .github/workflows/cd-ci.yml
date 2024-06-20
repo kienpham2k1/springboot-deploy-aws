@@ -27,8 +27,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: 'springboot-deploy-aws2'
-          environment_name: 'Springboot-deploy-aws-env'
-          version_label: ${{github.run_number}}
+          application_name: 'Springboot-deploy-aws2'
+          environment_name: 'springboot-deploy-aws-env'
+          version_label: ${{ github.ssh }}
           region: ap-northeast-3
-          deployment_package: deploy.zip
+          deployment_package: target/springboot-deploy-aws.jar
