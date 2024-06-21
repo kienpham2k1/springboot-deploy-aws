@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/home")
 public class HomeController {
-    @Value("${RDS_USERNAME}")
+    @Value("${username}")
     String userName;
     @GetMapping
     public String get() {
